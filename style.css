@@ -1,0 +1,118 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  --green-font: hsl(75, 94%, 57%);
+  --white-font: hsl(0, 0%, 100%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--grey-900);
+    color: var(--white-font);
+    font-size: .875rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: inherit;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 3rem 2rem 3rem;
+    min-height: clamp(calc(100% + 60px));
+    background-color: var(--grey-800);
+    border-radius: 8px;
+
+    .circle {
+        min-width: 70px;
+        max-width: 125px;
+        min-height: 70px;
+        max-height: 125px;
+        background-image: url('assets/images/avatar-jessica.jpeg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+
+    .group {
+        line-height: 1.25rem;
+    }
+    
+    p.p-location {
+        font-size: .625rem;
+        color: var(--green-font);
+    }
+
+    p.p-bio {
+        margin-top: .5rem;
+        font-size: .625rem;
+    }
+
+    .socials-container {
+        display: grid;
+        place-items: center;
+        min-width: 100%;
+        gap: .5rem;
+    }
+
+    .socials-box {
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        padding: .75rem;
+        width: 100%;
+        background-color: var(--grey-700);
+        border-radius: 6px;
+    }
+
+    .socials-box:hover,
+    .socials-box:focus-visible {
+            transform: translateY(-.25rem);
+            box-shadow: 0 3px 5px 0 rgba(197, 248, 42, .65);
+            transform-box: border-box;
+            transition: all 250ms ease-in-out;
+            background-color: var(--green-font);
+            color: var(--grey-900);
+        }
+
+    a {
+        display: grid;
+        place-items: center;
+        min-width: 100%;
+        text-decoration: none;
+        color: var(--white-font);
+    }
+}
+
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
