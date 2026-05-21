@@ -91,7 +91,7 @@ article {
     }
 
     .socials-box:hover,
-    .socials-box:focus-visible {
+    a:focus-visible > .socials-box {
             transform: translateY(-.25rem);
             box-shadow: 0 3px 5px 0 rgba(197, 248, 42, .65);
             transform-box: border-box;
